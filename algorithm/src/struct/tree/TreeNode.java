@@ -1,4 +1,4 @@
-package struct;
+package struct.tree;
 
 public class TreeNode<Val> {
     TreeNode<Val> left;

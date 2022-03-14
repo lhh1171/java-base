@@ -1,4 +1,4 @@
-package struct;
+package struct.tree;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -81,11 +81,11 @@ public class Tree<T> {
     }
 
 }
-class demo{
-    public static void main(String[] args) {
-        Integer[] in={0,1,2,3,4,5,6,7,8,9,10};
-        Tree<Integer> tree=new Tree<>(in);
-        tree.printAll(tree.root);
-        System.out.println();
-    }
-}
+//class demo{
+//    public static void main(String[] args) {
+//        Integer[] in={0,1,2,3,4,5,6,7,8,9,10};
+//        Tree<Integer> tree=new Tree<>(in);
+//        tree.printAll(tree.root);
+//        System.out.println();
+//    }
+//}
