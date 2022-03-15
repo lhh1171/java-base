@@ -70,7 +70,6 @@ public class SList<T extends Comparable<T>> {
                 }
 
             }
-
         }
         temp=this.head;
         this.head=tail;
@@ -90,7 +89,6 @@ public class SList<T extends Comparable<T>> {
             tp2.next=n1;
         }
 
-
         n1.pre=tp2;
         n1.next=tn2;
         if (tn1!=null){
@@ -99,7 +97,6 @@ public class SList<T extends Comparable<T>> {
         if (tp1!=null){
             tp1.next=n2;
         }
-
         n2.pre=tp1;
         n2.next=tn1;
     }

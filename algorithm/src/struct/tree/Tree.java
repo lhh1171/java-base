@@ -29,6 +29,7 @@ public class Tree<T> {
                     list.get(i).right = list.get(2 * i + 2);
                 }
             }
+
             // 判断最后一个根结点：因为最后一个根结点可能没有右结点，所以单独拿出来处理
             int lastIndex = array.length / 2 - 1;
             // 左结点
