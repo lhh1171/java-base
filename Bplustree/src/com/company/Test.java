@@ -3,11 +3,11 @@ package com.company;
 public class Test {
     public static void main(String[] args){
 
-        BPlusTree<Product, Integer> b = new BPlusTree<>(4);
+        BPlusTree<Product, Integer> b = new BPlusTree<>(8);
 
         long time1 = System.currentTimeMillis();
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 500; i++) {
             Product p = new Product(i, "test", 1.0 * i);
             b.insert(p, p.getId());
         }
