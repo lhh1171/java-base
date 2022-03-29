@@ -25,7 +25,7 @@ public class TreeOperation {
         //1、颜色表示
         if(currNode.isColor()){//黑色，加色后错位比较明显
                 res[rowIndex][columnIndex] = ("\033[30;3m" + currNode.getValue()+"\033[0m") ;
-        }else {
+        } else {
                 res[rowIndex][columnIndex] = ("\033[31;3m" + currNode.getValue()+"\033[0m") ;
         }
         //2、R,B表示
