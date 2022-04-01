@@ -8,7 +8,8 @@ public class Client {
 
     public Client() throws PulsarClientException {
          client = PulsarClient.builder()
-                .serviceUrl("pulsar://slave2:6650")
+//                .serviceUrl("pulsar://slave2:6650")
+                 .serviceUrl("pulsar://slave1:6650,slave2:6650,slave3:6650")
                 .build();
     }
 
