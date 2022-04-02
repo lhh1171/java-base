@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Apr 01 23:33:47 CST 2022
+http\://0.0.0.0/.error=Could not transfer artifact org.apache.httpcomponents\:httpcore\:jar\:4.4.3 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [bintray (http\://dl.bintray.com/typesafe/maven-releases/, default, releases+snapshots), oschina (http\://maven.oschina.net/content/groups/public/, default, releases+snapshots), terracotta-releases (http\://www.terracotta.org/download/reflector/releases/, default, releases+snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1648827087396
+http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1648827227212
