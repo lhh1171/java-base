@@ -39,10 +39,12 @@ public class Const {
 
     //config file
     public static final String PROTOCOLNAME = "http";
+
     //server itself
     public static final String PROXY = "proxy";
     public static final String LOCALHOST = "localhost";
     public static final String LISTEN = "listen";
+
     //real server settings
     public static final String PROXY_PASS = "proxy_pass";
     public static final String WEIGHT = "weight";
@@ -53,16 +55,19 @@ public class Const {
     public static final String CACHE_TTL = "cache_ttl";
     public static final String CACHE_SIZE = "cache_size";
     public static final String CACHE_TYPE = "cache_type";
+
     //lb_strategy
     public static final String LB_STRATEGY = "lb_strategy";
     public static final String ROUNDROBIN = "roundrobin";
     public static final String WEIGHT_ROUNDROBIN = "weight";
     public static final String IP_HASH = "ip_hash";
     public static final String LESS_CONNECT = "less_connection";
+
     //cache_url
     public static final String CACHE_URL = "cache_url";
     public static final String URL = "url";
     public static final String METHOD = "method";
+
     //ip_filter
     public static final String IP_FILTER = "ip_filter";
     public static final String IP = "ip";

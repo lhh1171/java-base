@@ -1,4 +1,5 @@
-package easyproxy.compress;/**
+package easyproxy.compress;
+/**
  * Description : 
  * Created by YangZH on 16-8-16
  *  上午12:35
@@ -19,6 +20,7 @@ import java.util.zip.GZIPOutputStream;
 public class Compressor {
 
     private int BUFFER_SIZE = 1024;
+    //压缩
     public byte[] gzip(byte[] data){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
@@ -38,6 +40,7 @@ public class Compressor {
         return baos.toByteArray();
     }
 
+    //解压
     public byte[] unGzip(byte[] data){
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

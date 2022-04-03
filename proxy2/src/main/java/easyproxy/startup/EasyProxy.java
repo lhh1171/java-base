@@ -24,7 +24,7 @@ public class EasyProxy {
 
 
     public static void main(final String[] args) throws MalformedURLException {
-        //开源中国要有WWW
+
         String config = Const.DEFAULT_CONFIGPATH;
 //        XmlUtil xmlUtil = new XmlUtil(Config.class.getResourceAsStream(config));
 //        System.out.println("param: "+xmlUtil.xml2Json());
@@ -36,7 +36,6 @@ public class EasyProxy {
         System.out.println("负载均衡策略:"+ Config.getString(Const.LB_STRATEGY));
         Config.listAllWeightHosts();
         server.startup();
-
     }
 
 //    public static String getLocalIPForJava() {

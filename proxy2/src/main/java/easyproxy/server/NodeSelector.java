@@ -23,7 +23,7 @@ import java.util.*;
 public class NodeSelector {
 
     public enum LBMode {
-        POLL, WEIGHT, IP_HASH, PERFORMANCE
+        POLL, WEIGHT, IP_HASH
     }
 
     static List<String> hostsname = new ArrayList<String>();
