@@ -36,22 +36,20 @@ public class Main {
      */
     public static void readFileByLines(String fileName) {
         File file = new File(fileName);
-        BufferedReader reader = null;
-        try {
-            System.out.println("以行为单位读取文件内容，一次读一整行：");
-            reader = new BufferedReader(new FileReader(file));
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String tempString = null;
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((tempString = reader.readLine()) != null) {
                 SumTask task = new SumTask(tempString.toCharArray(), 0, tempString.toCharArray().length);
-                Map<Character,Integer> result = ForkJoinPool.commonPool().invoke(task);
-                int sum=0;
-                for (Map.Entry<Character,Integer> entry : result.entrySet()) {
-                    sum+=entry.getValue();
+                Map<Character, Integer> result = ForkJoinPool.commonPool().invoke(task);
+                int sum = 0;
+                for (Map.Entry<Character, Integer> entry : result.entrySet()) {
+                    sum += entry.getValue();
                 }
+                System.out.println(fileName);
                 System.out.println(result);
-                System.out.println("sum : "+sum);
+//                System.out.println("sum : "+sum);
 //                // 显示行号
 //                System.out.println("line " + line + ": " + tempString);
 //                line++;
@@ -59,32 +57,25 @@ public class Main {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException ignored) {
-                }
-            }
         }
     }
     public static void main(String[] args) {
-//        for (int i = 0; i < 10; i++) {
-//            int finalI = i;
-//            new Thread(){
-//                @Override
-//                public void run() {
-//                    Random random=new Random();
-//                    StringBuilder stringBuilder=new StringBuilder();
-//                    for (int j = 0; j <1000; j++) {
-//                        stringBuilder.append((char) (random.nextInt(26)+65));
-//                    }
-//                    writeFileOne("src/com/company/jj/t" +finalI+".txt",stringBuilder.toString());
-//                }
-//            }.start();
-//        }
-
-        readFileByLines("src/com/company/jj/t1.txt");
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            new Thread(){
+                @Override
+                public void run() {
+                    Random random=new Random();
+                    StringBuilder stringBuilder=new StringBuilder();
+                    for (int j = 0; j <1000; j++) {
+                        stringBuilder.append((char) (random.nextInt(26)+65));
+                    }
+                    writeFileOne("src/com/company/jj/t" +finalI+".txt",stringBuilder.toString());
+                    System.out.println("-----------------------------------------------------------------------------------");
+                }
+            }.start();
+        }
+        readFileByLines("src/com/company/jj/t0.txt");
     }
 }
 class SumTask extends RecursiveTask<Map<Character,Integer>> {
