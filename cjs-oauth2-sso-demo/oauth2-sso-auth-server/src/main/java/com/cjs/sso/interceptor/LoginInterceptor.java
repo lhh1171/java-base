@@ -1,7 +1,5 @@
 package com.cjs.sso.interceptor;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -16,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
 
 
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
 
     private static   LoginInterceptor loginInterceptor;
 

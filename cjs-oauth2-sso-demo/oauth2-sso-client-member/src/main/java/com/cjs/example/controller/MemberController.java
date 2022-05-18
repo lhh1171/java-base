@@ -17,7 +17,6 @@ public class MemberController {
 
     @GetMapping("/list")
     public String list() {
-
         return "member/list";
     }
 
