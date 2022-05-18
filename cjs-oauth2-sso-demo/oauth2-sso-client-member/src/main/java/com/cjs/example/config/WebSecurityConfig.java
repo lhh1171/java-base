@@ -9,10 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
-/**
- * @author ChengJianSheng
- * @date 2019-03-03
- */
+
 @EnableOAuth2Sso
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

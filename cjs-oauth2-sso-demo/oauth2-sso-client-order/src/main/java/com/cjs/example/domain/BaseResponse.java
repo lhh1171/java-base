@@ -32,7 +32,7 @@ public class BaseResponse<T> implements Serializable {
     public BaseResponse(int code, String message, T data) {
         this.code = code;
         this.message = message;
-        this.success = code == SUCCESS_CODE ? true : false;
+        this.success = code == SUCCESS_CODE;
         this.data = data;
     }
 

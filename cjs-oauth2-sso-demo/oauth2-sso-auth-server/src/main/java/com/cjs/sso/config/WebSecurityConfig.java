@@ -11,14 +11,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
-/**
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+//    @Autowired
+//    private PersistentTokenRepository persistentTokenRepository;
 
     @Autowired
     private MyUserDetailsService userDetailsService;
@@ -43,6 +43,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and().csrf().disable().cors();
+//        //记住我
+//        http.rememberMe()
+//                //设置数据源
+//                .tokenRepository(persistentTokenRepository)
+//                // .rememberMeParameter()
+//                //超时时间
+//                .tokenValiditySeconds(60)
+//                //自定义登录逻辑
+//                .userDetailsService(userDetailsService);
     }
 
     @Bean

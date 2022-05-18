@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.security.Principal;
 
-/**
- * @author ChengJianSheng
- * @date 2019-03-03
- */
+
 @Controller
 @RequestMapping("/member")
 public class MemberController {

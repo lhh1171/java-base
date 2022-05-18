@@ -17,10 +17,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+
 @Slf4j
 @Service
 public class MyUserDetailsService implements UserDetailsService {

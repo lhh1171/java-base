@@ -3,10 +3,7 @@ package com.cjs.sso.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+
 @Controller
 public class LoginController {
 

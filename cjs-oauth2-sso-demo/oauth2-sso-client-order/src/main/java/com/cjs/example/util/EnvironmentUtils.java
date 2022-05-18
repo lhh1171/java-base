@@ -4,10 +4,7 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-/**
- * @author ChengJianSheng
- * @date 2019-02-17
- */
+
 @Component
 public class EnvironmentUtils implements EnvironmentAware {
 
