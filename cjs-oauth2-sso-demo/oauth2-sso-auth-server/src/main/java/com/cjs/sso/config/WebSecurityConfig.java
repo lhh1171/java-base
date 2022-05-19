@@ -11,14 +11,19 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-//    @Autowired
-//    private PersistentTokenRepository persistentTokenRepository;
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private PersistentTokenRepository persistentTokenRepository;
 
     @Autowired
     private MyUserDetailsService userDetailsService;
@@ -41,17 +46,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
                 .anyRequest()
-                .authenticated()
-                .and().csrf().disable().cors();
-//        //记住我
-//        http.rememberMe()
-//                //设置数据源
-//                .tokenRepository(persistentTokenRepository)
-//                // .rememberMeParameter()
-//                //超时时间
-//                .tokenValiditySeconds(60)
-//                //自定义登录逻辑
-//                .userDetailsService(userDetailsService);
+                .authenticated();
+        //记住我
+        http.rememberMe()
+                //设置数据源
+                .tokenRepository(persistentTokenRepository)
+                // .rememberMeParameter()
+                //超时时间
+                .tokenValiditySeconds(120)
+                //自定义登录逻辑
+                .userDetailsService(userDetailsService);
+        http.csrf().disable();
     }
 
     @Bean
@@ -59,4 +64,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository(){
+        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        //设置数据源
+        jdbcTokenRepository.setDataSource(dataSource);
+        //自动建表，第一次启动时开启，第二次启动时注释掉
+         jdbcTokenRepository.setCreateTableOnStartup(true);
+        return jdbcTokenRepository;
+    }
 }
